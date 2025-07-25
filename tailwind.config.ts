@@ -9,30 +9,43 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // 의료진 신뢰감을 주는 블루 계열 색상 팔레트
+        // 프리미엄 의료 브랜드 색상 팔레트 (다크 모드 지원)
         primary: {
-          50: '#EBF5FF',
-          100: '#E1EFFD',
-          200: '#C3DDFC',
-          300: '#A4CAFE',
-          400: '#76A9FA',
-          500: '#3F83F8', // 메인 블루
-          600: '#1C64F2',
-          700: '#1A56DB',
-          800: '#1E40AF',
-          900: '#1E3A8A',
+          50: '#f0f9ff',
+          100: '#e0f2fe', 
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9', // 메인 시안
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
         },
         secondary: {
-          50: '#F0F9FF',
-          100: '#E0F2FE',
-          200: '#BAE6FD',
-          300: '#7DD3FC',
-          400: '#38BDF8',
-          500: '#0EA5E9',
-          600: '#0284C7',
-          700: '#0369A1',
-          800: '#075985',
-          900: '#0C4A6E',
+          50: '#ecfeff',
+          100: '#cffafe',
+          200: '#a5f3fc',
+          300: '#67e8f9',
+          400: '#22d3ee',
+          500: '#06b6d4',
+          600: '#0891b2',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#164e63',
+        },
+        // 다크 모드 전용 색상
+        slate: {
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
         },
         // 중립 색상 (그레이 스케일)
         neutral: {
@@ -47,12 +60,20 @@ const config: Config = {
           800: '#262626',
           900: '#171717',
         },
-        // 강조 색상
+        // 프리미엄 강조 색상
         accent: {
-          blue: '#06B6D4',
-          green: '#10B981',
-          yellow: '#F59E0B',
-          red: '#EF4444',
+          cyan: '#06b6d4',
+          emerald: '#10b981', 
+          amber: '#f59e0b',
+          rose: '#f43f5e',
+          violet: '#8b5cf6',
+          gold: '#fbbf24',
+        },
+        // 그라디언트 정의
+        gradient: {
+          primary: 'linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%)',
+          secondary: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+          accent: 'linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%)',
         },
         // 배경 색상
         background: {
@@ -102,9 +123,23 @@ const config: Config = {
         },
       },
       boxShadow: {
-        'soft': '0 2px 8px rgba(0, 0, 0, 0.04)',
-        'medium': '0 4px 16px rgba(0, 0, 0, 0.08)',
-        'large': '0 8px 32px rgba(0, 0, 0, 0.12)',
+        'soft': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        'medium': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'large': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+        'inner': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+        'glow': '0 0 20px rgba(6, 182, 212, 0.3)',
+        'glow-lg': '0 0 40px rgba(6, 182, 212, 0.4)',
+      },
+      backdropBlur: {
+        'xs': '2px',
+        'sm': '4px', 
+        'md': '8px',
+        'lg': '12px',
+        'xl': '16px',
+        '2xl': '24px',
+        '3xl': '40px',
       },
     },
   },

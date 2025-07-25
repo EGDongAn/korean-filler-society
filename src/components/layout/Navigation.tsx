@@ -110,28 +110,35 @@ export default function Navigation() {
             {navigation.map((item) => (
               <div
                 key={item.name}
-                className="relative"
+                className="relative group"
                 onMouseEnter={() => setActiveDropdown(item.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <Link
                   href={item.href}
-                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors"
+                  className="inline-flex items-center px-4 py-3 text-sm font-semibold text-slate-700 hover:text-primary-600 hover:bg-gradient-to-r hover:from-primary-50 hover:to-secondary-50 rounded-xl transition-all duration-300 group-hover:shadow-md"
                 >
+                  <item.icon className="w-5 h-5 mr-2 group-hover:text-primary-500 transition-colors" />
                   {item.name}
-                  <ChevronDownIcon className="ml-1 h-4 w-4" />
+                  <ChevronDownIcon className="ml-2 h-4 w-4 group-hover:rotate-180 transition-transform duration-300" />
                 </Link>
 
-                {/* Dropdown Menu */}
+                {/* Premium Dropdown Menu */}
                 {activeDropdown === item.name && (
-                  <div className="absolute left-0 mt-0 w-48 bg-white rounded-lg shadow-large py-2 animate-slide-down">
-                    {item.submenu.map((subitem) => (
+                  <div className="absolute left-0 mt-2 w-64 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 py-2 z-50 animate-fade-up">
+                    {item.submenu.map((subitem, index) => (
                       <Link
                         key={subitem.name}
                         href={subitem.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
+                        className="flex items-center px-4 py-3 text-sm font-medium text-slate-700 hover:text-primary-600 hover:bg-gradient-to-r hover:from-primary-50 hover:to-secondary-50 rounded-xl mx-2 transition-all duration-200 group"
                       >
+                        <div className="w-2 h-2 bg-primary-400 rounded-full mr-3 group-hover:bg-primary-500 transition-colors"></div>
                         {subitem.name}
+                        <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
+                          <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
                       </Link>
                     ))}
                   </div>

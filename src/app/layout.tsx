@@ -46,7 +46,7 @@ export default function RootLayout({
         className={`${notoSansKr.variable} font-sans antialiased`}
       >
         <Navigation />
-        <main className="min-h-screen">
+        <main className="min-h-screen pt-20">
           {children}
         </main>
         <Footer />
